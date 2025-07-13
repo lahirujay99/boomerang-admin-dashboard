@@ -90,10 +90,10 @@ This project is a full-stack web application built for the Boomerang Software En
 ![Login Page](./screenshots/login-page.png)
 
 **Main Dashboard**
-![Main Dashboard](./screenshots/dashboard-view.png)
+![Main Dashboard](./screenshots/dashboard.png)
 
 **Customer Management**
-![Customer Management](./screenshots/customers-page.png)
+![Customer Management](./screenshots/Customers Page.png)
 
 ---```
 
