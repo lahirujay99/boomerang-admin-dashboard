@@ -95,16 +95,7 @@ This project is a full-stack web application built for the Boomerang Software En
 **Customer Management**
 ![Customer Management](./screenshots/customers-page.png)
 
----```
-
-**Explanation:**
-*   `![Login Page]` is the "alt text". It's what screen readers will say, and what will be displayed if the image fails to load.
-*   `./screenshots/login-page.png` is the relative path. It tells GitHub to look in the `screenshots` folder (which is in the same directory as the README) for the file `login-page.png`.
-
-**Pro Tip: Create a Table for a Side-by-Side View**
-For an even cleaner look, you can use a Markdown table to display screenshots next to each other. This is highly professional.
-
-```markdown
+---
 ---
 
 ### Application Preview
