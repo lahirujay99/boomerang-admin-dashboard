@@ -96,16 +96,3 @@ This project is a full-stack web application built for the Boomerang Software En
 ![Customer Management](./screenshots/customers-page.png)
 
 ---
----
-
-### Application Preview
-
-| Dashboard Overview                                   | Customer Management                                    |
-| ---------------------------------------------------- | ------------------------------------------------------ |
-| ![Dashboard](./screenshots/dashboard.png)       | ![Customers](./screenshots/Customers Page.png)         |
-
-| Login Page                                     | Sales History                                    |
-| ---------------------------------------------- | ------------------------------------------------ |
-| ![Login](./screenshots/login-page.png)         | ![Sales](./screenshots/Sales History Page.png)           |
-
----
