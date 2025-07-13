@@ -93,7 +93,7 @@ This project is a full-stack web application built for the Boomerang Software En
 ![Main Dashboard](./screenshots/dashboard.png)
 
 **Customer Management**
-![Customer Management](./screenshots/Customers Page.png)
+![Customer Management](./screenshots/customers-page.png)
 
 ---```
 
