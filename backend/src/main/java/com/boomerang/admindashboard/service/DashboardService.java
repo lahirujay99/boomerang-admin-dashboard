@@ -19,7 +19,7 @@ public class DashboardService {
     private CustomerRepository customerRepository;
 
     public DashboardStatsDTO getDashboardStats() {
-        // Use the custom query we created in SaleRepository
+        // Use the custom query created in SaleRepository
         BigDecimal totalSales = saleRepository.findTotalSales();
 
         // Count all sales records to get total bookings

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import apiClient from '../services/apiClient'; // <-- Import our API client
+import apiClient from '../services/apiClient'; 
 const BoomerangLogo = () => (
 <div style={{
 width: '40px',

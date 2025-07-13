@@ -1,8 +1,6 @@
 import React from 'react';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
-// For this example, we'll use some mock data.
-// A real application might fetch this time-series data from a dedicated API endpoint.
 const chartData = [
   { name: 'Jan', Sales: 4000 },
   { name: 'Feb', Sales: 3000 },

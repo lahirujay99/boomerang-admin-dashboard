@@ -8,6 +8,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class DashboardStatsDTO {
     private BigDecimal totalSales;
-    private long totalBookings; // Assuming total bookings == total sales records for now
+    private long totalBookings; // Assuming total bookings == total sales records
     private long newCustomersThisMonth;
 }

@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface AdminUserRepository extends JpaRepository<AdminUser, Long> {
 
     /**
-     * Finds a user by their email address. We'll use this for authentication.
+     * Finds a user by their email address. use this for authentication.
      * It returns an Optional, which is a good practice to handle cases where
      * the user might not exist, avoiding NullPointerExceptions.
      *

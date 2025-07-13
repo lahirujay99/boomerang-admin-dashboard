@@ -21,10 +21,9 @@ apiClient.interceptors.request.use(
   }
 );
 
-// ** THE FIX IS HERE: A NEW RESPONSE INTERCEPTOR **
 // This interceptor will run on every response coming back from the API.
 apiClient.interceptors.response.use(
-  // The first function handles successful responses - we just pass them through.
+  // The first function handles successful responses 
   (response) => {
     return response;
   },

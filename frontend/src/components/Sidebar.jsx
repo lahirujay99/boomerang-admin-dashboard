@@ -30,7 +30,7 @@ const Sidebar = () => {
                     <BoomerangLogo />
                 </div>
                 <nav className="flex flex-col gap-4">
-                    {/* In the next phase, these links will navigate between pages */}
+                   
                     <NavLink to="/" className={navLinkClasses}>
                         <ChartPieIcon className="h-6 w-6" /> Dashboard
                     </NavLink>

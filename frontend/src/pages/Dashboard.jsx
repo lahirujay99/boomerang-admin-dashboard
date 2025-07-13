@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import apiClient from '../services/apiClient';
-import SalesChart from '../components/SalesChart'; // <-- Import our new chart
+import SalesChart from '../components/SalesChart';
 // A reusable component for the KPI cards
 const StatCard = ({ title, value }) => {
 return (
@@ -46,11 +46,11 @@ return (
             <StatCard title="New Customers (This Month)" value={stats?.newCustomersThisMonth} />
         </div>
 
-        {/* Chart Section - Placeholder is now replaced */}
+        {/* Chart Section */}
         <div className="mt-8 bg-bg-secondary rounded-lg p-6">
             <h3 className="text-lg font-semibold text-text-primary mb-4">Sales Revenue</h3>
             <div className="h-80">
-                {/* The placeholder is gone, and the real chart is here! */}
+               
                 <SalesChart />
             </div>
         </div>

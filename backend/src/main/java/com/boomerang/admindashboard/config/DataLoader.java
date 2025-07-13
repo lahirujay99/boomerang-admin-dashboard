@@ -7,7 +7,6 @@ import com.boomerang.admindashboard.domain.SaleStatus;
 import com.boomerang.admindashboard.repository.AdminUserRepository;
 import com.boomerang.admindashboard.repository.CustomerRepository;
 import com.boomerang.admindashboard.repository.SaleRepository;
-import com.boomerang.admindashboard.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -46,8 +45,6 @@ public class DataLoader implements CommandLineRunner {
 
     private void loadData() {
         adminUserRepository.save(new AdminUser(null, "admin@test.com", passwordEncoder.encode("password"), "ROLE_ADMIN"));
-
-        // ** THE FIX IS HERE: Add 'null' as the last argument for the new 'sales' field **
         Customer cust1 = new Customer(null, "Liam Harper", "liam.harper@email.com", LocalDate.of(2022, 1, 15), new BigDecimal("500.00"), null);
         Customer cust2 = new Customer(null, "Olivia Bennett", "olivia.bennett@email.com", LocalDate.of(2022, 2, 20), new BigDecimal("750.00"), null);
         Customer cust3 = new Customer(null, "Noah Carter", "noah.carter@email.com", LocalDate.of(2022, 3, 10), new BigDecimal("300.00"), null);

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 const EditCustomerModal = ({ customer, onClose, onSave }) => {
-    // This state will hold the form data as the user types.
-    // It's initialized with the current customer's data.
     const [formData, setFormData] = useState({
         fullName: customer.fullName,
         email: customer.email,

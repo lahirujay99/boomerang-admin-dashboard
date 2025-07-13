@@ -26,7 +26,7 @@ import java.util.List;
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity // ** THIS IS THE CRITICAL FIX **
+@EnableMethodSecurity
 public class SecurityConfig {
 
     @Autowired
@@ -42,7 +42,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/**").hasRole("ADMIN") // Simplified rule: any /api/ path requires ROLE_ADMIN
+                        .requestMatchers("/api/**").hasRole("ADMIN") //
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
@@ -52,7 +52,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // All other beans are correct and do not need changes...
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();

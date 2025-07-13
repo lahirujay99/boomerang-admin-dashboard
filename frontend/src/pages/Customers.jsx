@@ -35,7 +35,6 @@ const Customers = () => {
             await apiClient.delete(`/customers/${customerId}`);
             
             // On success, update the frontend state to remove the customer from the list
-            // This provides an instant UI update without needing a page reload.
             setCustomers(customers.filter(customer => customer.id !== customerId));
             
         } catch (err) {
@@ -79,7 +78,6 @@ const Customers = () => {
 
     return (
         <div>
-            {/* ** RENDER THE MODAL CONDITIONALLY ** */}
             {isModalOpen && (
                 <EditCustomerModal
                     customer={editingCustomer}
@@ -91,7 +89,7 @@ const Customers = () => {
             <h1 className="text-3xl font-bold text-text-primary mb-6">Customer Management</h1>
             <div className="overflow-hidden rounded-lg border border-border-color bg-bg-secondary">
                 <table className="min-w-full divide-y divide-border-color">
-                    {/* ... thead ... */}
+                    {/* Table Header */}
                      <thead className="bg-bg-tertiary">
                         <tr>
                             <th className="px-6 py-3 text-left text-xs font-medium uppercase text-text-secondary">Full Name</th>
