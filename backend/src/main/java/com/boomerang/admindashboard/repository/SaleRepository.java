@@ -20,4 +20,7 @@ public interface SaleRepository extends JpaRepository<Sale, Long> {
      */
     @Query("SELECT COALESCE(SUM(s.amount), 0.0) FROM Sale s")
     BigDecimal findTotalSales(); // <-- CHANGE RETURN TYPE TO BigDecimal
+
+    // This allows us to delete all sales records belonging to a specific customer ID.
+    void deleteByCustomerId(Long customerId);
 }

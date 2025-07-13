@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import apiClient from '../services/apiClient';
+import SalesChart from '../components/SalesChart'; // <-- Import our new chart
 // A reusable component for the KPI cards
 const StatCard = ({ title, value }) => {
 return (
@@ -25,9 +26,8 @@ useEffect(() => {
             setIsLoading(false);
         }
     };
-
     fetchStats();
-}, []); // The empty dependency array means this runs once on component mount
+}, []);
 
 if (isLoading) {
     return <p className="text-text-secondary">Loading dashboard...</p>;
@@ -45,13 +45,15 @@ return (
             <StatCard title="Total Bookings" value={stats?.totalBookings} />
             <StatCard title="New Customers (This Month)" value={stats?.newCustomersThisMonth} />
         </div>
-         {/* We can add a placeholder for the chart here */}
+
+        {/* Chart Section - Placeholder is now replaced */}
         <div className="mt-8 bg-bg-secondary rounded-lg p-6">
-             <h3 className="text-lg font-semibold text-text-primary mb-4">Sales Revenue</h3>
-             <div className="h-80 text-text-secondary flex items-center justify-center">
-                <p>[Chart Placeholder]</p>
-             </div>
-         </div>
+            <h3 className="text-lg font-semibold text-text-primary mb-4">Sales Revenue</h3>
+            <div className="h-80">
+                {/* The placeholder is gone, and the real chart is here! */}
+                <SalesChart />
+            </div>
+        </div>
     </div>
 );
 };

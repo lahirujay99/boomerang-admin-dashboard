@@ -1,27 +1,52 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:8080/api', // base URL of Spring Boot backend
+  baseURL: 'http://localhost:8080/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Use an Axios Interceptor to add the JWT to every request
+// Request Interceptor: Attaches the JWT to every outgoing request.
 apiClient.interceptors.request.use(
   (config) => {
-    // Get the auth token from local storage
     const token = localStorage.getItem('authToken');
     if (token) {
-      // If the token exists, add it to the Authorization header
       config.headers['Authorization'] = `Bearer ${token}`;
     }
     return config;
   },
   (error) => {
-    // Handle request errors
     return Promise.reject(error);
   }
 );
+
+// ** THE FIX IS HERE: A NEW RESPONSE INTERCEPTOR **
+// This interceptor will run on every response coming back from the API.
+apiClient.interceptors.response.use(
+  // The first function handles successful responses - we just pass them through.
+  (response) => {
+    return response;
+  },
+  // The second function handles any API errors.
+  (error) => {
+    // Check if the error is specifically a 401 Unauthorized or 403 Forbidden error.
+    if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+      console.log("Authentication error detected, logging out...");
+      // Remove the invalid/expired token from storage.
+      localStorage.removeItem('authToken');
+      
+      // Force a redirect to the login page.
+      // Using window.location.href ensures a full page reload, clearing all component state.
+      if (window.location.pathname !== '/login') {
+          window.location.href = '/login';
+      }
+    }
+    
+    // For all other errors, just pass them along to be handled by the component.
+    return Promise.reject(error);
+  }
+);
+
 
 export default apiClient;

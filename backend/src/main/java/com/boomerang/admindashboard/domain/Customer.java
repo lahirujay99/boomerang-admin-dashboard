@@ -49,6 +49,7 @@ import lombok.AllArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -73,4 +74,12 @@ public class Customer {
     // CHANGE Double to BigDecimal
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal totalSpend;
+
+    // This tells JPA that one customer can have many sales.
+    // "mappedBy" indicates that the 'customer' field in the Sale entity manages this relationship.
+    // "cascade = CascadeType.ALL" is the magic part: it tells Hibernate to apply all
+    // operations (including DELETES) from this Customer to its associated Sales.
+    // "orphanRemoval = true" cleans up any sales that are disassociated from a customer.
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Sale> sales;
 }
