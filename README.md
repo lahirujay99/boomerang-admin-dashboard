@@ -80,3 +80,41 @@ This project is a full-stack web application built for the Boomerang Software En
 **Login Credentials:**
 *   **Email:** `admin@test.com`
 *   **Password:** `password`
+
+
+---
+
+### Screenshots
+
+**Login Page**
+![Login Page](./screenshots/login-page.png)
+
+**Main Dashboard**
+![Main Dashboard](./screenshots/dashboard-view.png)
+
+**Customer Management**
+![Customer Management](./screenshots/customers-page.png)
+
+---```
+
+**Explanation:**
+*   `![Login Page]` is the "alt text". It's what screen readers will say, and what will be displayed if the image fails to load.
+*   `./screenshots/login-page.png` is the relative path. It tells GitHub to look in the `screenshots` folder (which is in the same directory as the README) for the file `login-page.png`.
+
+**Pro Tip: Create a Table for a Side-by-Side View**
+For an even cleaner look, you can use a Markdown table to display screenshots next to each other. This is highly professional.
+
+```markdown
+---
+
+### Application Preview
+
+| Dashboard Overview                                   | Customer Management                                    |
+| ---------------------------------------------------- | ------------------------------------------------------ |
+| ![Dashboard](./screenshots/dashboard.png)       | ![Customers](./screenshots/Customers Page.png)         |
+
+| Login Page                                     | Sales History                                    |
+| ---------------------------------------------- | ------------------------------------------------ |
+| ![Login](./screenshots/login-page.png)         | ![Sales](./screenshots/Sales History Page.png)           |
+
+---
